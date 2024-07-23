@@ -1,8 +1,8 @@
 [Unit]
 Description=Create /opt/minecraft/server backup
-[Service]
-WorkingDirectory=/opt/minecraft/tools
-ExecStart=/opt/minecraft/tools/backup.sh
-StandardInput=null
+Requires=minecraft-backup.service
+[Timer]
+Unit=minecraft-backup.service
+OnCalendar=00/2:30
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
