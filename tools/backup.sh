@@ -1,7 +1,7 @@
 #!/bin/bash
 WORLDNAME=$(sed -n 's/^level-name=\(.*\)/\1/p' < /opt/minecraft/server/server.properties)
 function rcon {
- /opt/minecraft/tools/mcrcon -H 172.31.41.173 -p oct23 "$1"
+ /opt/minecraft/tools/mcrcon -H replacemewithip -p oct23 "$1"
  }
 rcon "say [§4WARNING§r] World backup process will begin in 5 minutes."
 sleep 5s
