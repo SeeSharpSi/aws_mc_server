@@ -4,7 +4,7 @@
 # Do not add any spaces between your link and the "=", otherwise it won't work. EG: MINECRAFTSERVERURL=https://urlexample
 
 
-MINECRAFTSERVERURL=https://meta.fabricmc.net/v2/versions/loader/1.20.4/0.15.7/1.0.0/server/jar
+MINECRAFTSERVERURL=https://meta.fabricmc.net/v2/versions/loader/1.20.1/0.15.11/1.0.1/server/jar
 EC2URLPUB=$(curl http://checkip.amazonaws.com)
 AWS_METADATA_TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
 EC2URLPRI=`curl -H "X-aws-ec2-metadata-token: $AWS_METADATA_TOKEN" http://169.254.169.254/latest/meta-data/local-ipv4`
