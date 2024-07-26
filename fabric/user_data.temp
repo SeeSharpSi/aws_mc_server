@@ -46,7 +46,7 @@ printf '[Unit]\nDescription=Minecraft Server on start up\nWants=network-online.t
 touch minecraft-backup.service
 printf '[Unit]\nDescription=Create /opt/minecraft/server backup\n[Service]\nWorkingDirectory=/opt/minecraft/tools\nExecStart=/opt/minecraft/tools/backup.sh\nStandardInput=null\n[Install]\nWantedBy=multi-user.target' >> minecraft-backup.service
 touch minecraft-backup.timer
-printf '[Unit]\nDescription=Timer for minecraft-backup.service\nRequires=minecraft-backup.service\n[Timer]\nUnit=minecraft-backup.service\nOnCalendar=00/2:30\n[Install]\nWantedBy=timers.target' >> minecraft-backup.timer
+printf '[Unit]\nDescription=Timer for minecraft-backup.service\nRequires=minecraft-backup.service\n[Timer]\nUnit=minecraft-backup.service\nOnActiveSec=1hours 15minutes\n[Install]\nWantedBy=timers.target' >> minecraft-backup.timer
 sudo systemctl daemon-reload
 sudo systemctl enable minecraft.service
 sudo systemctl start minecraft.service
