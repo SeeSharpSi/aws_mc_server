@@ -1,8 +1,11 @@
 [Unit]
-Description=Create /opt/minecraft/server backup
+Description=Minecraft Server on start up
+Wants=network-online.target
 [Service]
-WorkingDirectory=/opt/minecraft/tools
-ExecStart=/opt/minecraft/tools/backup.sh
+User=minecraft
+WorkingDirectory=/opt/minecraft/server
+ExecStart=/opt/minecraft/server/start
 StandardInput=null
+# MemoryLimit=3.5G
 [Install]
 WantedBy=multi-user.target
