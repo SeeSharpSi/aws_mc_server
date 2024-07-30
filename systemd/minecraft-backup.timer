@@ -1,8 +1,7 @@
 [Unit]
-Description=Create /opt/minecraft/server backup
+Description=Timer for minecraft-backup.service
 Requires=minecraft-backup.service
 [Timer]
-Unit=minecraft-backup.service
-OnCalendar=00/2:30
+OnUnitActiveSec=12hours
 [Install]
 WantedBy=timers.target
